@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 "${HOME}/AxonOS/platform/core-services/update-service/update_service.py" "$@"

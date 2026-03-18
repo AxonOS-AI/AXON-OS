@@ -1,0 +1,29 @@
+# =============================================================================
+# Axon OS — Docker Compose
+# Copyright (c) 2025 Abdullah — Axon OS Project
+# Licensed under Apache License 2.0
+# =============================================================================
+
+version: '3.8'
+
+services:
+  axon-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: axon-ai
+    image: axon-ai:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/axon-ai/models
+      - ./libraries:/axon-ai/libraries
+    environment:
+      - AI_RUNTIME=${AI_RUNTIME:-cpu}
+      - AI_MAX_MEMORY=${AI_MAX_MEMORY:-4096}
+
+
+networks:
+  default:
+    name: axon-network

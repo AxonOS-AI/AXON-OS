@@ -1,0 +1,23 @@
+# axon-os/phase1_boot/plymouth/axon.plymouth
+# ───────────────────────────────────────────
+# Plymouth Theme Configuration
+# This file registers the Axon OS boot theme with Plymouth.
+# Plymouth is the splash screen system used by Ubuntu.
+#
+# Installation:
+#   sudo cp -r axon/ /usr/share/plymouth/themes/axon/
+#   sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth \
+#        default.plymouth /usr/share/plymouth/themes/axon/axon.plymouth 100
+#   sudo update-alternatives --set default.plymouth \
+#        /usr/share/plymouth/themes/axon/axon.plymouth
+#   sudo update-initramfs -u
+# ───────────────────────────────────────────
+
+[Plymouth Theme]
+Name=Axon OS
+Description=Axon OS Boot Screen — Platform Intelligence Layer
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/axon
+ScriptFile=/usr/share/plymouth/themes/axon/axon.script

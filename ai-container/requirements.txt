@@ -1,0 +1,17 @@
+# Axon OS — AI Container Requirements
+# Copyright (c) 2025 Abdullah — Axon OS Project
+
+# Core AI
+torch>=2.0.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# API & Server
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+
+# Utilities
+numpy>=1.24.0
+psutil>=5.9.0
+python-dotenv>=1.0.0

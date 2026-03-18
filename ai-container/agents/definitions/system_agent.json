@@ -1,0 +1,17 @@
+{
+    "id": "system_agent",
+    "name": "Axon System Agent",
+    "version": "1.0.0",
+    "status": "scaffold",
+    "description": "Core system automation agent — monitors platform health and triggers maintenance tasks",
+    "capabilities": [
+        "monitor_resources",
+        "trigger_updates",
+        "cleanup_logs",
+        "notify_user"
+    ],
+    "trigger": "scheduled",
+    "schedule": "0 * * * *",
+    "layer": "ai_container",
+    "note": "Full implementation in Phase 5 — Agents System"
+}

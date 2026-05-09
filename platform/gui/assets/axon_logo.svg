@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .logo-bg    { fill: none; }
+      .proc-body  { fill: #050812; stroke: #00D4FF; stroke-width: 2; }
+      .proc-die   { fill: none;   stroke: #6C3CE1; stroke-width: 0.8; }
+      .proc-grid  { fill: none;   stroke: #00D4FF; stroke-width: 0.6; opacity: 0.1; }
+      .proc-pin   { stroke: #00D4FF; stroke-width: 1.4; stroke-linecap: round; }
+      .ax-text    { fill: #00D4FF; font-family: Courier New, monospace; font-size: 22px; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+      .outer-node { fill: #00D4FF; }
+      .inner-node { fill: #6C3CE1; }
+      .conn-line  { stroke: #00D4FF; stroke-width: 0.5; opacity: 0.15; fill: none; }
+      .inner-line { stroke: #6C3CE1; stroke-width: 0.4; opacity: 0.18; fill: none; }
+      .pulse-dot  { fill: #00D4FF; }
+      .ring       { fill: none; stroke: #00D4FF; stroke-width: 0.8; opacity: 0.12; }
+    </style>
+  </defs>
+
+  <rect class="logo-bg" width="200" height="200"/>
+
+  <!-- Outer connection lines (12 nodes, selected pairs) -->
+  <line class="conn-line" x1="100" y1="25"  x2="165" y2="63"/>
+  <line class="conn-line" x1="165" y1="63"  x2="165" y2="137"/>
+  <line class="conn-line" x1="165" y1="137" x2="100" y2="175"/>
+  <line class="conn-line" x1="100" y1="175" x2="35"  y2="137"/>
+  <line class="conn-line" x1="35"  y1="137" x2="35"  y2="63"/>
+  <line class="conn-line" x1="35"  y1="63"  x2="100" y2="25"/>
+  <line class="conn-line" x1="100" y1="25"  x2="165" y2="137"/>
+  <line class="conn-line" x1="165" y1="63"  x2="35"  y2="137"/>
+  <line class="conn-line" x1="35"  y1="63"  x2="165" y2="137"/>
+
+  <!-- Inner connection lines (6 inner nodes) -->
+  <line class="inner-line" x1="100" y1="54"  x2="134" y2="72"/>
+  <line class="inner-line" x1="134" y1="72"  x2="134" y2="128"/>
+  <line class="inner-line" x1="134" y1="128" x2="100" y2="146"/>
+  <line class="inner-line" x1="100" y1="146" x2="66"  y2="128"/>
+  <line class="inner-line" x1="66"  y1="128" x2="66"  y2="72"/>
+  <line class="inner-line" x1="66"  y1="72"  x2="100" y2="54"/>
+
+  <!-- Inner to outer lines -->
+  <line class="inner-line" x1="100" y1="54"  x2="100" y2="25"/>
+  <line class="inner-line" x1="134" y1="72"  x2="165" y2="63"/>
+  <line class="inner-line" x1="134" y1="128" x2="165" y2="137"/>
+  <line class="inner-line" x1="100" y1="146" x2="100" y2="175"/>
+  <line class="inner-line" x1="66"  y1="128" x2="35"  y2="137"/>
+  <line class="inner-line" x1="66"  y1="72"  x2="35"  y2="63"/>
+
+  <!-- Pulse dots on connections -->
+  <circle class="pulse-dot" cx="132" cy="44"  r="2"/>
+  <circle class="pulse-dot" cx="165" cy="100" r="2"/>
+  <circle class="pulse-dot" cx="68"  cy="156" r="2"/>
+
+  <!-- Outer neural nodes (12) -->
+  <circle class="outer-node" cx="100" cy="25"  r="3.5" opacity="0.9"/>
+  <circle class="outer-node" cx="140" cy="32"  r="2.5" opacity="0.7"/>
+  <circle class="outer-node" cx="165" cy="63"  r="3.5" opacity="0.85"/>
+  <circle class="outer-node" cx="175" cy="100" r="2.5" opacity="0.7"/>
+  <circle class="outer-node" cx="165" cy="137" r="3.5" opacity="0.9"/>
+  <circle class="outer-node" cx="140" cy="168" r="2.5" opacity="0.7"/>
+  <circle class="outer-node" cx="100" cy="175" r="3.5" opacity="0.85"/>
+  <circle class="outer-node" cx="60"  cy="168" r="2.5" opacity="0.7"/>
+  <circle class="outer-node" cx="35"  cy="137" r="3.5" opacity="0.9"/>
+  <circle class="outer-node" cx="25"  cy="100" r="2.5" opacity="0.7"/>
+  <circle class="outer-node" cx="35"  cy="63"  r="3.5" opacity="0.85"/>
+  <circle class="outer-node" cx="60"  cy="32"  r="2.5" opacity="0.7"/>
+
+  <!-- Inner neural nodes (6) -->
+  <circle class="inner-node" cx="100" cy="54"  r="3" opacity="0.8"/>
+  <circle class="inner-node" cx="134" cy="72"  r="3" opacity="0.8"/>
+  <circle class="inner-node" cx="134" cy="128" r="3" opacity="0.8"/>
+  <circle class="inner-node" cx="100" cy="146" r="3" opacity="0.8"/>
+  <circle class="inner-node" cx="66"  cy="128" r="3" opacity="0.8"/>
+  <circle class="inner-node" cx="66"  cy="72"  r="3" opacity="0.8"/>
+
+  <!-- Pulse ring -->
+  <circle class="ring" cx="100" cy="100" r="42"/>
+  <circle class="ring" cx="100" cy="100" r="55"/>
+
+  <!-- Processor body -->
+  <rect class="proc-body" x="72" y="72" width="56" height="56" rx="5"/>
+
+  <!-- Inner die -->
+  <rect class="proc-die" x="81" y="81" width="38" height="38" rx="3"/>
+
+  <!-- Grid inside processor -->
+  <line class="proc-grid" x1="92"  y1="79" x2="92"  y2="121"/>
+  <line class="proc-grid" x1="100" y1="79" x2="100" y2="121"/>
+  <line class="proc-grid" x1="108" y1="79" x2="108" y2="121"/>
+  <line class="proc-grid" x1="79"  y1="92" x2="121" y2="92"/>
+  <line class="proc-grid" x1="79"  y1="100" x2="121" y2="100"/>
+  <line class="proc-grid" x1="79"  y1="108" x2="121" y2="108"/>
+
+  <!-- Processor pins — top -->
+  <line class="proc-pin" x1="86"  y1="72" x2="86"  y2="62" stroke-opacity="0.4"/>
+  <line class="proc-pin" x1="95"  y1="72" x2="95"  y2="62" stroke-opacity="0.8"/>
+  <line class="proc-pin" x1="105" y1="72" x2="105" y2="62" stroke-opacity="0.6"/>
+  <line class="proc-pin" x1="114" y1="72" x2="114" y2="62" stroke-opacity="0.4"/>
+
+  <!-- Processor pins — bottom -->
+  <line class="proc-pin" x1="86"  y1="128" x2="86"  y2="138" stroke-opacity="0.4"/>
+  <line class="proc-pin" x1="95"  y1="128" x2="95"  y2="138" stroke-opacity="0.8"/>
+  <line class="proc-pin" x1="105" y1="128" x2="105" y2="138" stroke-opacity="0.6"/>
+  <line class="proc-pin" x1="114" y1="128" x2="114" y2="138" stroke-opacity="0.4"/>
+
+  <!-- Processor pins — left -->
+  <line class="proc-pin" x1="72" y1="86"  x2="62" y2="86"  stroke-opacity="0.4"/>
+  <line class="proc-pin" x1="72" y1="95"  x2="62" y2="95"  stroke-opacity="0.8"/>
+  <line class="proc-pin" x1="72" y1="105" x2="62" y2="105" stroke-opacity="0.6"/>
+  <line class="proc-pin" x1="72" y1="114" x2="62" y2="114" stroke-opacity="0.4"/>
+
+  <!-- Processor pins — right -->
+  <line class="proc-pin" x1="128" y1="86"  x2="138" y2="86"  stroke-opacity="0.4"/>
+  <line class="proc-pin" x1="128" y1="95"  x2="138" y2="95"  stroke-opacity="0.8"/>
+  <line class="proc-pin" x1="128" y1="105" x2="138" y2="105" stroke-opacity="0.6"/>
+  <line class="proc-pin" x1="128" y1="114" x2="138" y2="114" stroke-opacity="0.4"/>
+
+  <!-- Ax text -->
+  <text class="ax-text" x="100" y="101">Ax</text>
+</svg>

@@ -1,21 +1,93 @@
-.axon/
-*.done
-*.state
-.env
-*.env
-secrets/
-*.key
-*.pem
-ai-container/models/*.bin
-ai-container/models/*.pt
-ai-container/models/*.gguf
-ai-container/models/*.safetensors
-datasets/
+# =========================
+# Axon OS - Git Ignore
+# =========================
+
+# Python
 __pycache__/
 *.pyc
-*.log
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+env/
+jupyter-env/
+
+# AI Models
+models/
+*.gguf
+*.bin
+*.safetensors
+*.ckpt
+
+# Environment Variables
+.env
+.env.local
+
+# Logs
 logs/
-.DS_Store
-Thumbs.db
+*.log
+
+# Temporary Files
+tmp/
+temp/
+.cache/
+
+# Build Files
+build/
+dist/
+
+# IDE
 .vscode/
 .idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Runtime
+*.pid
+*.sock
+
+# Docker
+docker-data/
+
+# AI Runtime Cache
+hf-cache/
+huggingface/
+
+# Test Outputs
+test-output/
+coverage/
+
+# Private Configs
+private/
+secrets/
+
+# Large Containers
+ai-container/
+
+
+# Backup Files
+*.bak
+*.bak2
+*_backup.py
+
+# Python Cache
+.pytest_cache/
+
+# Local Runtime
+runtime/
+sessions/
+
+
+# Private Internal Systems
+ai-container/
+platform/process_manager.py
+platform/state_manager.py
+platform/logger.py
+platform/gui/desktop-environment/ask_axon.py
+
+# Internal Update Systems
+scripts/update/
+

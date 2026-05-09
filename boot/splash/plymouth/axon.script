@@ -1,0 +1,161 @@
+# ═══════════════════════════════════════════════════════════
+# Axon OS Plymouth Script — Cyber Grid Boot Splash
+# Copyright (c) 2024 Abdullah — Axon OS Project (AGPL-3.0)
+# File: boot/splash/plymouth/axon.script
+# ═══════════════════════════════════════════════════════════
+
+# ── Background ───────────────────────────────────────────────
+Window.SetBackgroundTopColor(0.02, 0.03, 0.07);
+Window.SetBackgroundBottomColor(0.00, 0.01, 0.04);
+
+screen_width  = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+# ── Cyber Grid ───────────────────────────────────────────────
+grid_spacing = 48;
+
+fun make_hline(y) {
+    img = Image(screen_width, 1);
+    img.FillRectangle(0, 0, screen_width, 1, 0.00, 0.83, 1.00, 0.10);
+    s = Sprite(img);
+    s.SetX(0);
+    s.SetY(y);
+    s.SetZ(-10);
+}
+
+fun make_vline(x) {
+    img = Image(1, screen_height);
+    img.FillRectangle(0, 0, 1, screen_height, 0.00, 0.83, 1.00, 0.10);
+    s = Sprite(img);
+    s.SetX(x);
+    s.SetY(0);
+    s.SetZ(-10);
+}
+
+y = 0;
+while (y <= screen_height) {
+    make_hline(y);
+    y = y + grid_spacing;
+}
+
+x = 0;
+while (x <= screen_width) {
+    make_vline(x);
+    x = x + grid_spacing;
+}
+
+# ── Logo ─────────────────────────────────────────────────────
+logo_w = 120;
+logo_h = 120;
+logo_x = Math.Int((screen_width  - logo_w) / 2);
+logo_y = Math.Int((screen_height / 2) - 100);
+
+# Glow ring
+glow_img = Image(logo_w + 20, logo_h + 20);
+glow_img.FillRectangle(0, 0, logo_w + 20, logo_h + 20, 0.00, 0.83, 1.00, 0.00);
+glow_img.FillRectangle(5, 5, logo_w + 10, logo_h + 10, 0.00, 0.83, 1.00, 0.10);
+glow_sprite = Sprite(glow_img);
+glow_sprite.SetX(logo_x - 10);
+glow_sprite.SetY(logo_y - 10);
+glow_sprite.SetZ(1);
+
+# Logo box
+logo_img = Image(logo_w, logo_h);
+logo_img.FillRectangle(0, 0, logo_w, logo_h, 0.02, 0.05, 0.12, 0.92);
+logo_img.FillRectangle(0, 0, logo_w, 2, 0.00, 0.83, 1.00, 0.90);
+logo_img.FillRectangle(0, logo_h - 2, logo_w, 2, 0.00, 0.83, 1.00, 0.90);
+logo_img.FillRectangle(0, 0, 2, logo_h, 0.00, 0.83, 1.00, 0.90);
+logo_img.FillRectangle(logo_w - 2, 0, 2, logo_h, 0.00, 0.83, 1.00, 0.90);
+logo_sprite = Sprite(logo_img);
+logo_sprite.SetX(logo_x);
+logo_sprite.SetY(logo_y);
+logo_sprite.SetZ(2);
+
+# "Ax" text
+ax_img = Image.Text("Ax", 0.00, 0.83, 1.00, 1.0, "Courier New Bold 36");
+ax_sprite = Sprite(ax_img);
+ax_sprite.SetX(Math.Int(logo_x + (logo_w - ax_img.GetWidth()) / 2));
+ax_sprite.SetY(Math.Int(logo_y + (logo_h - ax_img.GetHeight()) / 2));
+ax_sprite.SetZ(3);
+
+# ── Title ─────────────────────────────────────────────────────
+title_img = Image.Text("AXON  OS", 0.00, 0.83, 1.00, 1.0, "Courier New Bold 22");
+title_sprite = Sprite(title_img);
+title_sprite.SetX(Math.Int((screen_width - title_img.GetWidth()) / 2));
+title_sprite.SetY(logo_y + logo_h + 16);
+title_sprite.SetZ(3);
+
+ver_img = Image.Text("v1.0.0  |  AI-Powered Desktop", 0.29, 0.38, 0.50, 1.0, "Courier New 11");
+ver_sprite = Sprite(ver_img);
+ver_sprite.SetX(Math.Int((screen_width - ver_img.GetWidth()) / 2));
+ver_sprite.SetY(logo_y + logo_h + 46);
+ver_sprite.SetZ(3);
+
+# ── Progress Bar ──────────────────────────────────────────────
+bar_w = 400;
+bar_h = 4;
+bar_x = Math.Int((screen_width  - bar_w) / 2);
+bar_y = Math.Int((screen_height / 2) + 120);
+
+# Track
+track_img = Image(bar_w, bar_h);
+track_img.FillRectangle(0, 0, bar_w, bar_h, 0.05, 0.08, 0.15, 1.0);
+track_sprite = Sprite(track_img);
+track_sprite.SetX(bar_x);
+track_sprite.SetY(bar_y);
+track_sprite.SetZ(4);
+
+# Fill
+fill_sprite = Sprite();
+fill_sprite.SetZ(5);
+
+# ── Status Message ────────────────────────────────────────────
+msg_sprite = Sprite();
+msg_sprite.SetZ(5);
+
+boot_msgs_0 = "Initializing Axon Platform...";
+boot_msgs_1 = "Loading AI Container...";
+boot_msgs_2 = "Starting Core Services...";
+boot_msgs_3 = "Launching Desktop Environment...";
+boot_msgs_4 = "Welcome to Axon OS";
+
+fun show_msg(txt) {
+    img = Image.Text(txt, 0.00, 0.83, 1.00, 0.70, "Courier New 10");
+    msg_sprite.SetImage(img);
+    msg_sprite.SetX(Math.Int((screen_width - img.GetWidth()) / 2));
+    msg_sprite.SetY(bar_y + 12);
+}
+
+show_msg(boot_msgs_0);
+
+# ── Refresh (pulse glow) ──────────────────────────────────────
+global.pulse_t = 0;
+
+fun refresh_cb() {
+    global.pulse_t = global.pulse_t + 0.05;
+    alpha = 0.08 + 0.06 * Math.Sin(global.pulse_t * 2.5);
+    new_glow = Image(logo_w + 20, logo_h + 20);
+    new_glow.FillRectangle(5, 5, logo_w + 10, logo_h + 10, 0.00, 0.83, 1.00, alpha);
+    glow_sprite.SetImage(new_glow);
+}
+Plymouth.SetRefreshFunction(refresh_cb);
+
+# ── Progress callback ─────────────────────────────────────────
+fun progress_cb(time, progress) {
+    fw = Math.Int(bar_w * progress);
+    if (fw < 2) { fw = 2; }
+
+    fill_img = Image(fw, bar_h);
+    fill_img.FillRectangle(0, 0, fw, bar_h, 0.00, 0.83, 1.00, 1.0);
+    fill_sprite.SetImage(fill_img);
+    fill_sprite.SetX(bar_x);
+    fill_sprite.SetY(bar_y);
+
+    idx = Math.Int(progress * 4.99);
+    if      (idx == 0) { show_msg(boot_msgs_0); }
+    else if (idx == 1) { show_msg(boot_msgs_1); }
+    else if (idx == 2) { show_msg(boot_msgs_2); }
+    else if (idx == 3) { show_msg(boot_msgs_3); }
+    else               { show_msg(boot_msgs_4); }
+}
+Plymouth.SetBootProgressFunction(progress_cb);

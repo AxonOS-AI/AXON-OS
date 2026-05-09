@@ -1,0 +1,411 @@
+/* AxonOS/platform/gui/themes/axon-light.css
+ * ─────────────────────────────────────────────────────────────────
+ * Copyright (c) 2024 Abdullah — Axon OS Project (AGPL-3.0)
+ * Purpose: GTK4 light theme for Axon OS.
+ * ─────────────────────────────────────────────────────────────────
+ */
+
+/* ── Global Reset ────────────────────────────────────────────── */
+* {
+  font-family: Ubuntu, Sans, sans-serif;
+  font-size: 14px;
+  color: #0F172A;
+  outline: none;
+}
+
+/* ── Window / Background ─────────────────────────────────────── */
+window,
+.background {
+  background-color: #F0F2F5;
+  color: #0F172A;
+}
+
+/* ── Header Bar ──────────────────────────────────────────────── */
+headerbar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CBD5E1;
+  color: #0F172A;
+  padding: 4px 8px;
+  min-height: 36px;
+}
+
+headerbar .title {
+  color: #0F172A;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+headerbar button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #3A4A6A;
+  padding: 4px 8px;
+  min-height: 28px;
+}
+
+headerbar button:hover {
+  background-color: #E8EDF5;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+headerbar button:active {
+  background-color: #0064C812;
+  border-color: #0064C830;
+  color: #0064C8;
+}
+
+/* ── Axon Taskbar ────────────────────────────────────────────── */
+.axon-taskbar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CBD5E1;
+  padding: 6px 12px;
+  min-height: 44px;
+}
+
+.axon-taskbar-item {
+  background-color: #F0F2F5;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: #3A4A6A;
+  margin: 0 3px;
+}
+
+.axon-taskbar-item:hover {
+  border-color: #0064C844;
+  color: #0064C8;
+  background-color: #0064C808;
+}
+
+.axon-taskbar-item.active {
+  background-color: #0064C822;
+  border-color: #0064C850;
+  color: #0064C8;
+}
+
+.axon-logo-btn {
+  background-color: #0064C812;
+  border: 1px solid #0064C830;
+  border-radius: 8px;
+  padding: 4px 12px;
+  color: #0064C8;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.axon-logo-btn:hover {
+  background-color: #0064C822;
+  border-color: #0064C860;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+button {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  color: #3A4A6A;
+  padding: 6px 14px;
+  min-height: 32px;
+  transition: all 150ms ease;
+}
+
+button:hover {
+  background-color: #E8EDF5;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+button:active {
+  background-color: #0064C812;
+  border-color: #0064C850;
+  color: #0064C8;
+}
+
+button.suggested-action {
+  background-color: #0064C8;
+  border-color: #0064C8;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+button.suggested-action:hover {
+  background-color: #0050A0;
+}
+
+button.destructive-action {
+  background-color: transparent;
+  border-color: #B91C1C;
+  color: #B91C1C;
+}
+
+button.destructive-action:hover {
+  background-color: #B91C1C22;
+}
+
+/* ── Entry / Input ───────────────────────────────────────────── */
+entry {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  color: #0F172A;
+  padding: 6px 10px;
+  min-height: 34px;
+}
+
+entry:focus {
+  border-color: #0064C850;
+  background-color: #FAFCFF;
+}
+
+entry placeholder {
+  color: #6A7A9A;
+}
+
+/* ── Labels ──────────────────────────────────────────────────── */
+label {
+  color: #0F172A;
+}
+
+label.dim-label,
+label.subtitle {
+  color: #3A4A6A;
+}
+
+label.caption {
+  color: #6A7A9A;
+  font-size: 11px;
+}
+
+label.accent {
+  color: #0064C8;
+}
+
+/* ── Frame / Box ─────────────────────────────────────────────── */
+frame {
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding: 4px;
+}
+
+frame > label {
+  color: #3A4A6A;
+  font-size: 11px;
+  padding: 0 4px;
+}
+
+box.card {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* ── Progress Bar ────────────────────────────────────────────── */
+progressbar {
+  min-height: 4px;
+}
+
+progressbar trough {
+  background-color: #CBD5E1;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+progressbar progress {
+  background-color: #0064C8;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+/* ── Scale / Slider ──────────────────────────────────────────── */
+scale trough {
+  background-color: #CBD5E1;
+  border-radius: 2px;
+  min-height: 4px;
+}
+
+scale highlight {
+  background-color: #0064C8;
+  border-radius: 2px;
+}
+
+scale slider {
+  background-color: #0064C8;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+scrollbar {
+  background-color: transparent;
+}
+
+scrollbar slider {
+  background-color: #CBD5E1;
+  border-radius: 4px;
+  min-width: 6px;
+  min-height: 6px;
+}
+
+scrollbar slider:hover {
+  background-color: #94A3B8;
+}
+
+scrollbar.vertical slider {
+  min-width: 6px;
+}
+
+scrollbar.horizontal slider {
+  min-height: 6px;
+}
+
+/* ── List / Row ──────────────────────────────────────────────── */
+listview,
+listbox {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+}
+
+listview row,
+listbox row {
+  padding: 8px 12px;
+  border-bottom: 1px solid #E2E8F0;
+  color: #0F172A;
+}
+
+listview row:hover,
+listbox row:hover {
+  background-color: #F0F2F5;
+}
+
+listview row:selected,
+listbox row:selected {
+  background-color: #0064C815;
+  color: #0064C8;
+}
+
+/* ── Dashboard Widgets ───────────────────────────────────────── */
+.axon-widget {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.axon-widget-title {
+  color: #6A7A9A;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.axon-widget-value {
+  color: #0064C8;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+}
+
+.axon-widget-unit {
+  color: #3A4A6A;
+  font-size: 12px;
+}
+
+/* ── Status Badges ───────────────────────────────────────────── */
+.badge-ok {
+  background-color: #15803D22;
+  color: #15803D;
+  border: 1px solid #15803D44;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge-warn {
+  background-color: #B4530922;
+  color: #B45309;
+  border: 1px solid #B4530944;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge-error {
+  background-color: #B91C1C22;
+  color: #B91C1C;
+  border: 1px solid #B91C1C44;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge-info {
+  background-color: #1D4ED822;
+  color: #1D4ED8;
+  border: 1px solid #1D4ED844;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────────── */
+tooltip {
+  background-color: #0F172A;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  color: #F0F2F5;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* ── Menu ────────────────────────────────────────────────────── */
+popover {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+popover modelbutton {
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #0F172A;
+}
+
+popover modelbutton:hover {
+  background-color: #F0F2F5;
+}
+
+/* ── Switch ──────────────────────────────────────────────────── */
+switch {
+  background-color: #CBD5E1;
+  border-radius: 12px;
+  min-width: 44px;
+  min-height: 22px;
+}
+
+switch:checked {
+  background-color: #0064C8;
+}
+
+switch slider {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+/* ── Separator ───────────────────────────────────────────────── */
+separator {
+  background-color: #CBD5E1;
+  min-height: 1px;
+  min-width: 1px;
+}

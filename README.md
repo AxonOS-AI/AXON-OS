@@ -1,70 +1,105 @@
-# Axon OS — Platform Layer
+# AXON OS
 
-> "Build innovation on top of stability."
+> AI-Native Operating Layer built on Ubuntu
 
-Axon OS is a platform-oriented layer built on top of Ubuntu.
-It transforms a standard Linux distribution into a specialized environment for AI development, experimentation, and system automation.
+Developed by Abdullah Ali
 
----
+AXON OS is an intelligent execution layer designed to transform traditional Linux systems into AI-native environments.
 
-## Project Structure
-
-```
-axon-os/
-├── phase1_boot/               ← Phase 1: Boot Interface
-│   ├── plymouth/              ← Plymouth boot theme (real Ubuntu boot)
-│   │   ├── axon.plymouth      ← Theme config file
-│   │   ├── axon.script        ← Animation script
-│   │   └── assets/            ← Logo and images
-│   ├── splash_simulator/      ← Python visual simulator (preview)
-│   │   ├── main.py            ← Entry point
-│   │   ├── config.py          ← Configuration constants
-│   │   ├── animation.py       ← Animation engine
-│   │   └── logo_generator.py  ← SVG logo builder
-│   └── scripts/
-│       ├── install_theme.sh   ← Install Plymouth theme to system
-│       └── check_deps.sh      ← Check system dependencies
-├── docs/
-│   └── PHASE1_NOTES.md        ← Phase 1 technical notes
-└── README.md
-```
+Instead of launching tools manually, AXON focuses on understanding user intent and orchestrating intelligent workflows locally.
 
 ---
 
-## Phases Overview
+# Vision
 
-| Phase | Component | Status |
-|-------|-----------|--------|
-| 1 | Boot Interface | 🔨 In Progress |
-| 2 | Desktop Environment | 🔜 Planned |
-| 3 | System Dashboard | 🔜 Planned |
-| 4 | Project Manager | 🔜 Planned |
-| 5 | AI Runtime | 🔜 Planned |
-| 6 | Update System | 🔜 Planned |
+AXON OS is not just a desktop environment.
 
----
+It is designed as an AI-driven operating layer capable of:
 
-## Phase 1 — Quick Start
-
-### Option A: Preview the boot screen (no installation needed)
-```bash
-cd phase1_boot/splash_simulator
-pip install pygame
-python main.py
-```
-
-### Option B: Install Plymouth theme on Ubuntu
-```bash
-cd phase1_boot/scripts
-chmod +x install_theme.sh
-sudo ./install_theme.sh
-```
+- Understanding user goals
+- Managing intelligent workflows
+- Running local AI models
+- Automating development and analysis tasks
+- Providing offline-first AI capabilities
 
 ---
 
-## Requirements
+# Core Philosophy
 
-- Ubuntu 20.04 / 22.04 / 24.04
-- Python 3.8+
-- pygame (for simulator only)
-- Plymouth (pre-installed on Ubuntu)
+"Users should describe what they want.
+The system should determine how to achieve it."
+
+---
+
+# Current Status
+
+AXON OS is currently under active development.
+
+Main development areas include:
+
+- AI Runtime
+- Intent Parsing
+- Workflow Orchestration
+- Local AI Integration
+- Intelligent Project Management
+- AI-assisted Desktop Experience
+
+---
+
+# Main Technologies
+
+- Ubuntu 22.04
+- Python
+- GTK4
+- Cairo
+- Local LLM Integration
+- Offline AI Runtime
+
+---
+
+# Project Goals
+
+- AI-native Linux experience
+- Local-first AI workflows
+- Intelligent execution environment
+- Modular architecture
+- Offline-capable AI system
+
+---
+
+# Security
+
+AXON OS is designed with strong focus on:
+
+- Local execution
+- Privacy-first workflows
+- Minimal cloud dependency
+- Modular architecture
+- Controlled AI execution
+
+---
+
+# Development Status
+
+This repository currently contains:
+- Core platform structure
+- Desktop environment components
+- Runtime architecture
+- Early AI integration systems
+
+Some internal components remain private during active development.
+
+---
+
+# License
+
+This project is protected under its respective license.
+
+Unauthorized redistribution of proprietary internal systems is prohibited.
+
+---
+
+# Developer
+
+Abdullah Ali
+

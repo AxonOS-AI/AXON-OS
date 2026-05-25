@@ -91,3 +91,37 @@ platform/gui/desktop-environment/ask_axon.py
 # Internal Update Systems
 scripts/update/
 
+
+# AXON local runtime and release-safety exclusions
+.venv/
+jupyter-env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local backups and generated runtime reports
+backups/
+environment/runtime_reports/
+
+# Logs
+*.log
+docs/*.log
+
+# Secrets and credentials
+.env
+*.env
+kaggle.json
+*secret*
+*credential*
+*token*
+
+# Local model files and heavy artifacts
+models/
+ai-container/models/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx

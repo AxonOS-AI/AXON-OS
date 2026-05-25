@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
+SOURCE_PATH="${BASH_SOURCE[0]}"
+
+if command -v readlink >/dev/null 2>&1; then
+    RESOLVED_PATH="$(readlink -f "$SOURCE_PATH")"
+else
+    RESOLVED_PATH="$SOURCE_PATH"
+fi
+
+AXON_DIR="$(cd "$(dirname "$RESOLVED_PATH")" && pwd)"
+VENV_PYTHON="$AXON_DIR/.venv/bin/python"
+
+if [ ! -x "$VENV_PYTHON" ]; then
+    echo "AXON Error: virtual environment was not found."
+    echo "Expected: $VENV_PYTHON"
+    echo ""
+    echo "Run setup first or create the AXON virtual environment."
+    exit 1
+fi
+
+exec "$VENV_PYTHON" "$AXON_DIR/cli/axon_cli.py" "$@"

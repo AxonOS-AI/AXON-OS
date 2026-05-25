@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "report_type": "axon_preview_readiness",
+  "generated_at": "2026-05-25T00:11:01.231319Z",
+  "version": "Developer Preview 0.1",
+  "ready_for_developer_preview": true,
+  "release_channel": "developer_preview",
+  "blocking_issues": [],
+  "warnings": [
+    "Virtualized environment detected: vmware.",
+    "GPU acceleration is disabled because AXON is running in VM-safe CPU mode.",
+    "GPU acceleration is not enabled in this environment. AXON will run in VM-safe CPU mode.",
+    "Virtualized runtime detected. Hardware acceleration requires WSL2, bare metal, or GPU passthrough."
+  ],
+  "completed_capabilities": [
+    "AXON CLI command wrapper",
+    "AXON boot screen",
+    "AXON Doctor environment health check",
+    "Runtime package verification",
+    "Virtualization detection",
+    "GPU capability detection",
+    "Acceleration policy",
+    "VM-safe CPU mode",
+    "Safe installation planning",
+    "Approval-based operation planning",
+    "Execution reports",
+    "Markdown final reports"
+  ],
+  "deferred_capabilities": [
+    {
+      "name": "Full GPU driver automation",
+      "status": "deferred",
+      "reason": "GPU driver installation requires confirmed supported hardware, environment checks, and explicit approval."
+    },
+    {
+      "name": "bitsandbytes installation",
+      "status": "deferred",
+      "reason": "Allowed only after supported NVIDIA CUDA backend is confirmed."
+    },
+    {
+      "name": "ROCm setup",
+      "status": "deferred",
+      "reason": "Requires supported AMD hardware and environment compatibility checks."
+    },
+    {
+      "name": "Real dataset download workflow",
+      "status": "planned",
+      "reason": "Requires Kaggle credentials handling and download execution safeguards."
+    },
+    {
+      "name": "Training workflow execution",
+      "status": "planned",
+      "reason": "Requires dataset flow, resource policy, and safe executor real execution mode."
+    },
+    {
+      "name": "ISO image",
+      "status": "not_for_preview",
+      "reason": "Developer Preview will launch as a project package and CLI before ISO."
+    }
+  ],
+  "available_commands": [
+    "axon start",
+    "axon start --fast",
+    "axon doctor",
+    "axon version",
+    "axon help"
+  ],
+  "runtime_summary": {
+    "python_executable": "/home/abdullah/AxonOS/.venv/bin/python3",
+    "venv_active": true,
+    "missing_required_packages": [],
+    "missing_optional_packages": [
+      "bitsandbytes"
+    ]
+  },
+  "environment_summary": {
+    "virtualization_detected": true,
+    "virtualization_type": "vmware",
+    "gpu_vendor": "virtual",
+    "virtual_gpu_detected": true,
+    "gpu_passthrough_status": "not_detected_virtual_gpu_only",
+    "acceleration_mode": "vm_safe_cpu",
+    "backend": "cpu",
+    "gpu_acceleration_ready": false
+  },
+  "safety_summary": {
+    "release_safe": true,
+    "execution_is_guarded": true,
+    "approval_system_available": true,
+    "reports_available": true,
+    "gpu_driver_auto_install_allowed": false,
+    "rocm_auto_install_allowed": false,
+    "bitsandbytes_auto_install_allowed": false,
+    "system_python_modified": false,
+    "break_system_packages_used": false
+  },
+  "launch_positioning": {
+    "name": "AXON OS Developer Preview 0.1",
+    "description": "AI-native operating layer foundation focused on safe runtime checks, VM/GPU awareness, approval-based operations, and developer reports.",
+    "not_final_release": true,
+    "recommended_label": "Developer Preview"
+  }
+}

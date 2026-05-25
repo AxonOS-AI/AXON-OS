@@ -254,11 +254,12 @@ class AXONDoctor:
         return "support_library"
 
     def _package_required(self, package_name):
-        optional_packages = [
-            "bitsandbytes"
-        ]
+        # Developer Preview must boot and run AXON Doctor without requiring
+        # heavy AI/GPU packages. AI workflow packages are optional until the
+        # real training/download workflow is enabled.
+        required_packages = []
 
-        return package_name not in optional_packages
+        return package_name in required_packages
 
     def _timestamp(self):
         return datetime.utcnow().isoformat() + "Z"

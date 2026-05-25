@@ -1,0 +1,6 @@
+kaggle
+sentencepiece
+peft
+trl
+jupyterlab
+opencv-python-headless

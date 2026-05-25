@@ -1,0 +1,5 @@
+# Optional GPU packages.
+# Do not install blindly.
+# bitsandbytes is only allowed after NVIDIA CUDA readiness is confirmed.
+# ROCm/NVIDIA drivers are not installed through pip.
+# bitsandbytes

@@ -1,0 +1,3 @@
+# AXON OS Developer Preview minimal requirements
+# The preview CLI, doctor, VM/GPU checks, and reports are designed to run mostly on Python standard library.
+# Optional AI packages are listed in requirements-ai.txt.
